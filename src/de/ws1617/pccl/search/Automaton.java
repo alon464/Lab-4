@@ -18,7 +18,7 @@ public class Automaton {
 
 	private Stack<Hypothesis> agenda;
 
-	private List<NonTerminal> nonTerminals;
+	private ArrayList<Terminal> terminals;
 
 	private NonTerminal startSymbol;
 
@@ -41,7 +41,7 @@ public class Automaton {
 	 */
 	public boolean recognize(String input) {
 
-		// TODO implement me !
+		
 
 		return false;
 	}
@@ -69,8 +69,19 @@ public class Automaton {
 	 */
 	private ArrayList<Terminal> initialize(String s) {
 
-		// TODO implement me !
-		return null;
+		terminals=new ArrayList<>();
+		
+		for(int i=0;i<s.length();i++)
+		{
+			String[]arrayTerminals = s.split("\\s+");
+			Terminal terminal=null;
+			for(int j=0;j<arrayTerminals.length;j++)
+			{
+				terminal = new Terminal(arrayTerminals[j]);
+			}
+			terminals.add(terminal);
+		}
+		return terminals;
 	}
 
 	/**

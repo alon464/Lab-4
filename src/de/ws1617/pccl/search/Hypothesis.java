@@ -25,6 +25,11 @@ public class Hypothesis
 		index=new ArrayList<>();
 		
 	}
+	
+	public int getSize()
+	{
+		return index.size();
+	}
 
 	public void setIndex(ArrayList<Integer>in)
 	{
